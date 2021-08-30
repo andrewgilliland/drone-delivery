@@ -7,15 +7,14 @@ import { DroneDeliveryContext } from "@/state/Context";
 import styles from "@/styles/Home.module.css";
 import Button from "@/components/Button";
 
-export default function VerifyPAge() {
+export default function VerifyPage() {
   const { user, handleChangeUser } = useContext(DroneDeliveryContext);
 
   function verifiedSubmit(e) {
-    console.log(`clicked!`);
     e.preventDefault();
 
     // Put data from context into db
-    
+
     // Redirect to the thanks page
     router.push("/thanks");
     // Clear out context
@@ -23,11 +22,12 @@ export default function VerifyPAge() {
   }
 
   function unVerifiedSubmit(e) {
-    console.log(`clicked!`);
     e.preventDefault();
-
     router.push("/");
   }
+
+  // If context is empty, go back to home page
+  if (user.name === "") return <div>Go back</div>;
 
   return (
     <div className={styles.container}>
@@ -41,8 +41,8 @@ export default function VerifyPAge() {
         <div>
           <p>
             {user.name} please verify that{" "}
-            <span className="border border-gray-500 rounded-md px-1">
-              {user.address}
+            <span className="border border-green-500 bg-green-100 text-green-800 rounded-md px-1">
+              {user.street}, {user.city}, {user.state} {user.zipcode}
             </span>
             is your correct address.
           </p>

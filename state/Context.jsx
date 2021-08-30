@@ -14,13 +14,6 @@ export const Provider = ({ children }) => {
     handleChangeUser,
   };
 
-  // const value = {
-  //   user: {
-  //     name: "Jim Bob",
-  //     address: "123 Test Lane",
-  //   },
-  // };
-
   return (
     <DroneDeliveryContext.Provider value={value}>
       {children}

@@ -558,6 +558,11 @@
     "es-abstract" "^1.18.0-next.1"
     "function-bind" "^1.1.1"
 
+"asap@~2.0.6":
+  "integrity" "sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY="
+  "resolved" "https://registry.npmjs.org/asap/-/asap-2.0.6.tgz"
+  "version" "2.0.6"
+
 "asn1.js@^5.2.0":
   "integrity" "sha512-+I//4cYPccV8LdmBLiX8CYvf9Sp3vQsrqu2QNXRcrbiWvcx/UdlFiqUJJzxRQxgsZmvhXhn4cSKeSmoFjVdupA=="
   "resolved" "https://registry.npmjs.org/asn1.js/-/asn1.js-5.4.1.tgz"
@@ -622,6 +627,21 @@
   "integrity" "sha512-5LMaDRWm8ZFPAEdzTYmgjjEdj1YnQcpfrVajO/sn/LhbpGp0Y0H64c2hLZI1gRMxfA+w1S71Uc/nHaOXgcCvGg=="
   "resolved" "https://registry.npmjs.org/axe-core/-/axe-core-4.3.2.tgz"
   "version" "4.3.2"
+
+"axios-proxy-fix@^0.16.3":
+  "integrity" "sha512-dLRTjqYW7A9kuqh3aiFjvQrBSQipVwsHFV401MdQb2JhQS9rAobAMhME2GxZXNXDblWRGCVfW/LdoHUXrPFBRg=="
+  "resolved" "https://registry.npmjs.org/axios-proxy-fix/-/axios-proxy-fix-0.16.3.tgz"
+  "version" "0.16.3"
+  dependencies:
+    "follow-redirects" "^1.2.3"
+    "is-buffer" "^1.1.5"
+
+"axios-retry@^3.1.9":
+  "integrity" "sha512-NFCoNIHq8lYkJa6ku4m+V1837TP6lCa7n79Iuf8/AqATAHYB0ISaAS1eyIenDOfHOLtym34W65Sjke2xjg2fsA=="
+  "resolved" "https://registry.npmjs.org/axios-retry/-/axios-retry-3.1.9.tgz"
+  "version" "3.1.9"
+  dependencies:
+    "is-retry-allowed" "^1.1.0"
 
 "axobject-query@^2.2.0":
   "integrity" "sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA=="
@@ -1649,6 +1669,11 @@
   "resolved" "https://registry.npmjs.org/flatted/-/flatted-3.2.2.tgz"
   "version" "3.2.2"
 
+"follow-redirects@^1.2.3":
+  "integrity" "sha512-yLR6WaE2lbF0x4K2qE2p9PEXKLDjUjnR/xmjS3wHAYxtlsI9MLLBJUZirAHKzUZDGLxje7w/cXR49WOUo4rbsA=="
+  "resolved" "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.14.2.tgz"
+  "version" "1.14.2"
+
 "foreach@^2.0.5":
   "integrity" "sha1-C+4AUBiusmDQo6865ljdATbsG5k="
   "resolved" "https://registry.npmjs.org/foreach/-/foreach-2.0.5.tgz"
@@ -1995,6 +2020,11 @@
     "call-bind" "^1.0.2"
     "has-tostringtag" "^1.0.0"
 
+"is-buffer@^1.1.5":
+  "integrity" "sha512-NcdALwpXkTm5Zvvbk7owOUSvVvBKDgKP5/ewfXEznmQFfs4ZRmanOeKBTjRVjka3QFoN6XJ+9F3USqfHqTaU5w=="
+  "resolved" "https://registry.npmjs.org/is-buffer/-/is-buffer-1.1.6.tgz"
+  "version" "1.1.6"
+
 "is-callable@^1.1.4", "is-callable@^1.2.3":
   "integrity" "sha512-nsuwtxZfMX67Oryl9LCQ+upnC0Z0BgpwntpS89m1H/TLF0zNfzfLMV/9Wa/6MZsj0acpEjAO0KF1xT6ZdLl95w=="
   "resolved" "https://registry.npmjs.org/is-callable/-/is-callable-1.2.4.tgz"
@@ -2070,6 +2100,11 @@
   dependencies:
     "call-bind" "^1.0.2"
     "has-tostringtag" "^1.0.0"
+
+"is-retry-allowed@^1.1.0":
+  "integrity" "sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg=="
+  "resolved" "https://registry.npmjs.org/is-retry-allowed/-/is-retry-allowed-1.2.0.tgz"
+  "version" "1.2.0"
 
 "is-string@^1.0.5", "is-string@^1.0.6":
   "integrity" "sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg=="
@@ -2884,6 +2919,13 @@
   "resolved" "https://registry.npmjs.org/progress/-/progress-2.0.3.tgz"
   "version" "2.0.3"
 
+"promise@^8.1.0":
+  "integrity" "sha512-W04AqnILOL/sPRXziNicCjSNRruLAuIHEOVBazepu0545DDNGYHz7ar9ZgZ1fMU8/MA4mVxp5rkBWRi6OXIy3Q=="
+  "resolved" "https://registry.npmjs.org/promise/-/promise-8.1.0.tgz"
+  "version" "8.1.0"
+  dependencies:
+    "asap" "~2.0.6"
+
 "prop-types@^15.7.2":
   "integrity" "sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ=="
   "resolved" "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
@@ -3265,6 +3307,15 @@
     "ansi-styles" "^4.0.0"
     "astral-regex" "^2.0.0"
     "is-fullwidth-code-point" "^3.0.0"
+
+"smartystreets-javascript-sdk@^1.10.4":
+  "integrity" "sha512-ZMw7CisadmcHzzvR5PzgHrSvM8NO+dN1z6TpOIEN8EucqfhNznuNmFgVjvljd2kLFnlc2xZEw3+NdUwIUVOH5Q=="
+  "resolved" "https://registry.npmjs.org/smartystreets-javascript-sdk/-/smartystreets-javascript-sdk-1.10.4.tgz"
+  "version" "1.10.4"
+  dependencies:
+    "axios-proxy-fix" "^0.16.3"
+    "axios-retry" "^3.1.9"
+    "promise" "^8.1.0"
 
 "source-map-js@^0.6.2":
   "integrity" "sha512-/3GptzWzu0+0MBQFrDKzw/DvvMTUORvgY6k6jd/VS6iCR4RDTKWH6v6WPwQoUO8667uQEf9Oe38DxAYWY5F/Ug=="
