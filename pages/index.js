@@ -1,8 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+
+import styles from "@/styles/Home.module.css";
+import Button from "@/components/Button";
 
 export default function Home() {
+  // handleSubmit
+  // Check db to see if user exists
+  // If user exists, display error message and exit
+  // Else
+  // Verify address with SmartyStreet API
+  // If address does not exists, display error message and exit
+  // Else
+  // Put User data into context
+  // Redirect to verify page
+
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +24,10 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Drone Delivery</h1>
+        <div className="flex flex-col items-center">
+          <h1 className="text-3xl">Drone Delivery</h1>
+          <p className="mt-2">Get started with our new drone delivery service today!</p>
+        </div>
 
         <form
           className="flex flex-col border border-gray-100 shadow-md p-5 rounded-sm mt-5"
@@ -22,10 +37,14 @@ export default function Home() {
           <input className="bg-gray-100 rounded-md" id="name" type="text" />
           <label htmlFor="address">Address</label>
           <input className="bg-gray-100 rounded-md" id="address" type="text" />
-          <button className="bg-blue-500 text-gray-100 px-4 py-2 rounded-md mt-5">
-            Get Started
-          </button>
+          <Button>Get Started</Button>
         </form>
+
+        <div>
+          <p className="bg-red-100 text-red-500 px-4 py-1 rounded-full mt-5 border border-red-500">
+            Error message here!
+          </p>
+        </div>
       </main>
     </div>
   );
