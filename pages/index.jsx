@@ -2,9 +2,12 @@ import Head from "next/head";
 
 import styles from "@/styles/Home.module.css";
 import Form from "@/components/Form";
+// import firebase from "@/utils/firebase";
+// import GooglePlaces from "@/components/GooglePlaces";
+
+// firebase();
 
 export default function Home() {
-
   return (
     <div className={styles.container}>
       <Head>
@@ -20,9 +23,7 @@ export default function Home() {
             Get started with our new drone delivery service today!
           </p>
         </div>
-
         <Form />
-
         <div>
           <p className="bg-red-100 text-red-500 px-4 py-1 rounded-full mt-5 border border-red-500">
             Error message here!

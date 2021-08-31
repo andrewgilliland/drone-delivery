@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import router from "next/router";
-import SmartyStreetsSDK from "smartystreets-javascript-sdk";
+// import PlacesAutocomplete, {geocodeByAddress, getLatLng} from 'react-places-autocomplete'
 
 import { DroneDeliveryContext } from "@/state/Context";
 
@@ -18,49 +18,17 @@ export default function Form() {
 
   const { user, handleChangeUser } = useContext(DroneDeliveryContext);
 
-  const SmartyStreetsCore = SmartyStreetsSDK.core;
-  const Lookup = SmartyStreetsSDK.usStreet.Lookup;
-
-  let key = process.env.NEXT_PUBLIC_SMARTY_WEBSITE_KEY;
-  const credentials = new SmartyStreetsCore.SharedCredentials(key);
-
-  let clientBuilder = new SmartyStreetsCore.ClientBuilder(credentials)
-    .withBaseUrl("/")
-    .withLicenses(["us-rooftop-geocoding-cloud"]);
-  let client = clientBuilder.buildUsStreetApiClient();
-
   function handleSubmit(e) {
     e.preventDefault();
-    // Check db to see if user exists
+    // 1. Check db to see if user exists
     // If user exists, display error message and exit
     // Else
-    // Verify address with SmartyStreet API
 
-    let lookup = new Lookup();
+    // 2. Verify address with API
 
-    lookup.street = values.street;
-    lookup.urbanization = ""; // Only applies to Puerto Rico addresses
-    lookup.city = values.city;
-    lookup.state = values.state;
-    lookup.zipCode = values.zipcode;
-    lookup.maxCandidates = 3;
-    lookup.match = "invalid";
+    // 3. Geocode address with Mapbox API
 
-    client.send(lookup).then(handleSuccess).catch(handleError);
-
-    function handleSuccess(response) {
-      console.log(response.result);
-      //   response.lookup.result;
-    }
-
-    function handleError(response) {
-      console.log(response);
-    }
-
-    // If address does not exists, display error message and exit
-    // Else
-    // Geocode address with Mapbox API
-    // Put User data into context
+    // 4. Put User data into context
     handleChangeUser({
       name: values.name,
       street: values.street,
@@ -73,7 +41,11 @@ export default function Form() {
   }
 
   return (
-    <form className="flex flex-col border border-gray-100 shadow-md p-5 rounded-sm mt-5">
+    <form
+      className="flex flex-col border border-gray-100 shadow-md p-5 rounded-sm mt-5"
+    >
+     
+
       <label htmlFor="name">Name</label>
       <input
         className="bg-gray-100 rounded-md px-2 py-1"
@@ -92,6 +64,7 @@ export default function Form() {
           id="street"
           value={values.street}
           onChange={updateValue}
+          max={50}
         />
         <label htmlFor="city">City</label>
         <input
@@ -101,15 +74,17 @@ export default function Form() {
           id="city"
           value={values.city}
           onChange={updateValue}
+          max={64}
         />
-        <label htmlFor="State">State</label>
+        <label htmlFor="state">State</label>
         <input
           className="bg-gray-100 rounded-md px-2 py-1"
           type="text"
-          name="State"
-          id="State"
-          value={values.State}
+          name="state"
+          id="state"
+          value={values.state}
           onChange={updateValue}
+          max={32}
         />
         <label htmlFor="zipcode">Zipcode</label>
         <input
@@ -119,11 +94,10 @@ export default function Form() {
           id="zipcode"
           value={values.zipcode}
           onChange={updateValue}
+          max={16}
         />
       </div>
       <Button handleSubmit={handleSubmit}>Get Started</Button>
     </form>
   );
 }
-
-// `https://www.smartystreets.com/products/apis/us-street-api?key=21102174564513388&candidates=${values.street}&city=${values.city}&state=${values.state}&zipcode=${values.zipcode}&match=enhanced&license=us-rooftop-geocoding-cloud&method=get`;
